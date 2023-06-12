@@ -16,7 +16,7 @@ string[] CreateArray(int size)
 
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.WriteLine("Please enter the first elemet of the array: ");
+        Console.WriteLine("Please enter elemet of the array: ");
         arr[i] = Convert.ToString(Console.ReadLine());
     }
     return arr;
