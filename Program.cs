@@ -35,17 +35,25 @@ void PrintArray(string[] arr)
 
 string[] AlterationArray(string[] arr)
 {
-    string[] arrSec = new string[arr.Length];
+    int size = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length < 3)
+        {
+            size++;
+        }
+    }
+    string[] arrSec = new string[size];
     int j = 0;
     for (int i = 0; i < arr.Length; i++)
-        {  
-                if (arr[i].Length < 3) 
-                {
-                    arrSec[j] = arr[i];
-                    j++;
-                }             
+    {
+        if (arr[i].Length < 3)
+        {
+            arrSec[j] = arr[i];
+            j++;
         }
-        return arrSec;
+    }
+    return arrSec;
 }
 
 Console.WriteLine("Please enter the size of your array: ");
@@ -53,6 +61,6 @@ int length = Convert.ToInt32(Console.ReadLine());
 
 string[] array = CreateArray(length);
 PrintArray(array);
-Console.WriteLine("->");
+Console.Write("->");
 string[] arraySecond = AlterationArray(array);
 PrintArray(arraySecond);
